@@ -207,7 +207,9 @@ export class ProductCard extends Component {
       const productUrl = anchorElement.href;
       const { productCardLink, productTitleLink, cardGalleryLink } = this.refs;
 
-      productCardLink.href = productUrl;
+      if (productCardLink instanceof HTMLAnchorElement) {
+        productCardLink.href = productUrl;
+      }
       if (cardGalleryLink instanceof HTMLAnchorElement) {
         cardGalleryLink.href = productUrl;
       }
